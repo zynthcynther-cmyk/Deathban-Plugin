@@ -1,0 +1,34 @@
+# DeathBan configuration
+
+# How long a deathban lasts, in minutes. 0 = permanent until pardoned.
+ban-duration-minutes: 0
+
+# Ticks to wait before kicking the dead player so the effects play (20 ticks = 1 second).
+kick-delay-ticks: 40
+
+# Lightning strike (visual + thunder only, no damage or fire) at the death location.
+lightning:
+  enabled: true
+
+# Warden sound played when a player dies.
+sound:
+  enabled: true
+  # Any Minecraft sound key, e.g. entity.warden.roar, entity.warden.emerge,
+  # entity.warden.sonic_boom, entity.warden.death
+  key: "entity.warden.roar"
+  volume: 2.0
+  pitch: 1.0
+  # true = every online player hears it, false = only players near the death
+  play-for-everyone: true
+
+messages:
+  # Shown on the kick screen and when the player tries to rejoin.
+  # Placeholders: {time} = time remaining, {player} = player name
+  banned: "&c&lYOU DIED!\n&7You have been deathbanned.\n&eTime remaining: &f{time}\n&7Ask an admin for a pardon."
+  broadcast: "&4☠ &c{player} has died and been deathbanned!"
+  pardoned: "&aPardoned &f{player}&a. They can play again."
+  pardoned-broadcast: "&a{player} has been pardoned from their deathban."
+  not-banned: "&c{player} is not deathbanned."
+  no-bans: "&7No players are currently deathbanned."
+  reloaded: "&aDeathBan config reloaded."
+  usage-pardon: "&cUsage: /deathpardon <player>"

@@ -1,0 +1,26 @@
+name: DeathBan
+version: ${project.version}
+main: com.example.deathban.DeathBanPlugin
+api-version: "1.21"
+description: Bans players on death, with lightning and a Warden sound. Admins can pardon.
+commands:
+  deathpardon:
+    description: Pardon a player from their deathban so they can play again
+    usage: /deathpardon <player>
+    aliases: [dpardon]
+    permission: deathban.pardon
+  deathbans:
+    description: List or check deathbanned players, or reload the config
+    usage: /deathbans <list|check <player>|reload>
+    aliases: [dbans]
+    permission: deathban.admin
+permissions:
+  deathban.pardon:
+    description: Allows pardoning players from a deathban
+    default: op
+  deathban.admin:
+    description: Allows listing deathbans and reloading the config
+    default: op
+  deathban.bypass:
+    description: Players with this permission are not banned on death
+    default: false
